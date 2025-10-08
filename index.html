@@ -284,7 +284,7 @@
     <div class="scene active-scene" id="scene1">
         <h1 class="text-primary text-4xl md:text-5xl font-bold mb-8">Happy Birthday Madam ji</h1>
         <h2 class="text-xl md:text-2xl mb-8">Wishing you a great year ahead<br>filled with joy and love, and of course with MEEEEE</h2>
-        <button class="btn-primary" id="startBtn">Let's Celebrate 🎉</button>
+        <button class="btn-primary" id="startBtn">Ready for the Surprise?</button>
     </div>
 
     <!-- Scene 2: Birthday Event -->
@@ -297,7 +297,7 @@
     <!-- Scene 3: Gift Reveal -->
     <div class="scene" id="scene3">
         <h1 class="text-primary text-4xl md:text-5xl font-bold mb-8">This is for you! 💝</h1>
-        <button class="btn-primary" id="openGiftBtn">Open it</button>
+        <button class="btn-primary" id="openGiftBtn">Read my Heart 💝</button>
     </div>
 
     <!-- Scene 4: Birthday Letter with Background -->
@@ -309,7 +309,7 @@
         <div class="max-w-2xl mx-auto text-left px-4">
             <p id="letterText" class="text-white text-base md:text-lg leading-relaxed" style="line-height: 1.8;"></p>
         </div>
-        <button class="btn-primary mt-8 hidden" id="celebrateAgainBtn">Celebrate Again 🎉</button>
+        <button class="btn-primary mt-8 hidden" id="celebrateAgainBtn">Experience it again ✨</button>
     </div>
 
     <script>
@@ -340,14 +340,14 @@
             
             let currentStep = 0;
             const eventSteps = [
-                { text: "Decorate the room 🎀", action: decorateRoom },
-                { text: "Let's arrange the balloons first", action: addBalloonsAndConfetti },
+                { text: "Wait, I am decorating the room 🎀", action: decorateRoom },
+                { text: "Now some colorful balloons", action: addBalloonsAndConfetti },
                 { text: "Oh sorry, the Happy Birthday text!", action: showBirthdayText },
-                { text: "Let's see Cake 🍰", action: showCake },
-                { text: "The candles 🎂", action: addCandles },
-                { text: "Blow the candles 💨", action: blowCandles },
-                { text: "Cut the cake 🔪", action: cutCake },
-                { text: "Now for your gift 🎁", action: () => navigateToScene(2) }
+                { text: "Time to see the cake 🍰", action: showCake },
+                { text: "Time to light up the candles 🎂", action: addCandles },
+                { text: "Make a wish and blow them out 💨", action: blowCandles },
+                { text: "Now cut your birthday cake! 🔪", action: cutCake },
+                { text: "Now, want to know what I am thinking? 🎁", action: () => navigateToScene(2) }
             ];
             
             function startBirthdayEvent() {
@@ -509,6 +509,7 @@
     </script>
 </body>
 </html>
+
 
 
 
