@@ -249,6 +249,9 @@
 
     <!-- Scene 4: Birthday Letter with Background -->
     <div class="scene" id="scene4">
+        <audio id="bgMusic" loop>
+        <source src="images/song.mp3" type="audio/mpeg">
+    </audio>
         <h1 class="text-primary text-3xl md:text-4xl font-bold mb-8">Happy 22nd Birthday, My Love ❤️</h1>
         <div class="max-w-2xl mx-auto text-left px-4">
             <p id="letterText" class="text-white text-base md:text-lg leading-relaxed" style="line-height: 1.8;"></p>
@@ -427,6 +430,10 @@
             function animateLetter() {
                 const letterText = document.getElementById('letterText');
                 const celebrateBtn = document.getElementById('celebrateAgainBtn');
+                const bgMusic = document.getElementById('bgMusic');
+    bgMusic.volume = 0.3; // Set volume to 30% (soft music)
+    bgMusic.play();
+                
                 const fullText = `It's been almost four years amader kotha bola suru howar por — and somewhere after all the random chats, kotha bola, batch e chokh lukiye takano, you became my comfort.\n\nWhen we first met, amra keu e vabini j amra jeta nijder life er chaos theke dure theke ektu valo feel korar jonne choose korchi seta kokhono eto ta pure and comforting hoye uthbe. You became that one person jar sathe ami completely nijer moto thakte pari — no mask, no explanation, no noise. sudhu amra and amader moment ta.\n\nHa amader memories bananor moto grand kichu hoyto hoyni but still, those moments we shared — Science center e ba ksp park, movie theater (jekhane amra movie dekhtei vule gachilam), bike e kore tomar amar komor dhore jawa, that first kiss — seguloi extraordinary because you were there. Somehow, tumi ei simple jinis gulo vison rokom special baniye felecho. You showed me kono reason chara just tomar dike takiye haste ba kichu feel korte kono explanation lage na, kivabe just tomar presence jekono heavy mood ke aste aste light kore dite pare.\n\nTumi na jantei onek ta heal korecho amay — jeta hoyto amio bujhini j I needed, kintu pawar por ekhon setar value ta bujhte pari. Kono big gestures noy, but through your care and love, tomar patience, and tomar way of understanding, even jokhon kichu clearly bole uthte parini tokhono bujhe newar j bapar ta, Uffff. Today, on your birthday, I just want to say this — you mean a lot to me, more than jeta vebe amra suru korechilam. You're not just a part of my story… tomar jonne ei chapter er onek gulo golpo kharap howar poreo abar kichu ta nijer moto kore sundor hoye utheche trust me.\n\nAnd at the end abaro bolte chai j, Happy Birthday, Madam ji — tumi samne thakle ekta chumu diye kotha gulo boltam but ekhon evabei bolte hocche... Love you a lot 💖`;
                 
                 letterText.textContent = '';
@@ -449,4 +456,5 @@
     </script>
 </body>
 </html>
+
 
