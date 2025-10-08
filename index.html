@@ -84,7 +84,7 @@
         }
         
         .typing-animation {
-            border-right: 2px solid black;
+            border-right: 2px solid white;
             display: inline-block;
         }
         
@@ -151,22 +151,60 @@
             animation: pulse 2s ease-in-out infinite;
         }
         
+        /* Background image styling for Scene 4 */
+        #scene4 {
+            background-color: black;
+        }
+        
+        #scene4::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/background.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0.5;
+            z-index: 0;
+        }
+        
+        #scene4 > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        #scene4 h1 {
+            color: #e53e3e;
+        }
+        
+        #scene4 #letterText {
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+        
         @media (max-width: 768px) {
             .cake {
                 max-width: 200px;
             }
             
             h1 {
-                font-size: 2rem !important;
+                font-size: 1.75rem !important;
             }
             
             h2 {
-                font-size: 1.2rem !important;
+                font-size: 1.1rem !important;
             }
             
             .btn-primary {
                 padding: 0.8rem 1.5rem;
                 font-size: 1rem;
+            }
+            
+            #letterText {
+                font-size: 0.95rem !important;
             }
         }
     </style>
@@ -192,11 +230,11 @@
         <button class="btn-primary" id="openGiftBtn">Open it</button>
     </div>
 
-    <!-- Scene 4: Birthday Letter -->
+    <!-- Scene 4: Birthday Letter with Background -->
     <div class="scene" id="scene4">
         <h1 class="text-primary text-3xl md:text-4xl font-bold mb-8">Happy 22nd Birthday, My Love ❤️</h1>
         <div class="max-w-2xl mx-auto text-left px-4">
-            <p id="letterText" class="text-black text-base md:text-lg leading-relaxed"></p>
+            <p id="letterText" class="text-white text-base md:text-lg leading-relaxed" style="line-height: 1.8;"></p>
         </div>
         <button class="btn-primary mt-8 hidden" id="celebrateAgainBtn">Celebrate Again 🎉</button>
     </div>
@@ -275,125 +313,4 @@
             }
             
             function addBalloonsAndConfetti() {
-                const decorations = document.getElementById('decorations');
-                
-                // Multiple balloons for better decoration
-                const balloonPositions = [
-                    { left: '10%', top: '20%', delay: 0 },
-                    { left: '85%', top: '15%', delay: 200 },
-                    { left: '15%', top: '60%', delay: 400 },
-                    { left: '80%', top: '65%', delay: 600 },
-                    { left: '30%', top: '40%', delay: 800 },
-                    { left: '70%', top: '45%', delay: 1000 }
-                ];
-                
-                balloonPositions.forEach((pos, i) => {
-                    const balloon = document.createElement('div');
-                    balloon.className = 'balloon decoration-item';
-                    balloon.innerHTML = '<img src="images/Balloon-Border.png" width="60" alt="Balloon">';
-                    balloon.style.left = pos.left;
-                    balloon.style.top = pos.top;
-                    balloon.style.animationDelay = (i * 0.3) + 's';
-                    decorations.appendChild(balloon);
-                    setTimeout(() => balloon.style.opacity = '0.9', pos.delay);
-                });
-                
-                // Star confetti
-                for (let i = 0; i < 25; i++) {
-                    const star = document.createElement('div');
-                    star.className = 'confetti decoration-item';
-                    star.innerHTML = '<img src="images/star.png" width="20" alt="Star">';
-                    star.style.left = (Math.random() * 100) + '%';
-                    star.style.animationDelay = (Math.random() * 2) + 's';
-                    star.style.animationDuration = (Math.random() * 3 + 3) + 's';
-                    decorations.appendChild(star);
-                    setTimeout(() => star.style.opacity = '1', 100);
-                }
-            }
-            
-            function showBirthdayText() {
-                const content = document.getElementById('eventContent');
-                content.innerHTML = '<h2 class="text-primary text-3xl md:text-4xl font-bold mb-8 animate-pulse">HAPPY BIRTHDAY MADAM JI 🎉</h2>';
-            }
-            
-            function showCake() {
-                const content = document.getElementById('eventContent');
-                content.innerHTML = `
-                    <div class="cake-container" id="cakeContainer">
-                        <img src="images/cake.gif" alt="Birthday Cake" class="cake" id="cake">
-                    </div>
-                `;
-            }
-            
-            function addCandles() {
-                const cakeContainer = document.getElementById('cakeContainer');
-                const candlePositions = [
-                    { left: '35%', bottom: '65%' },
-                    { left: '45%', bottom: '68%' },
-                    { left: '55%', bottom: '68%' },
-                    { left: '65%', bottom: '65%' }
-                ];
-                
-                candlePositions.forEach((pos, i) => {
-                    const candle = document.createElement('div');
-                    candle.className = 'candle';
-                    candle.style.left = pos.left;
-                    candle.style.bottom = pos.bottom;
-                    candle.innerHTML = `
-                        <div style="font-size: 30px; line-height: 1;">🕯️</div>
-                        <div class="flame" style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); font-size: 20px;">
-                            🔥
-                        </div>
-                    `;
-                    cakeContainer.appendChild(candle);
-                });
-            }
-            
-            function blowCandles() {
-                const flames = document.querySelectorAll('.flame');
-                flames.forEach((flame, index) => {
-                    setTimeout(() => {
-                        flame.style.animation = 'none';
-                        flame.style.opacity = '0';
-                    }, index * 150);
-                });
-            }
-            
-            function cutCake() {
-                const cake = document.getElementById('cake');
-                cake.style.transform = 'scale(1.1)';
-                setTimeout(() => {
-                    cake.style.transform = 'scale(1)';
-                }, 300);
-            }
-            
-            function animateLetter() {
-                const letterText = document.getElementById('letterText');
-                const celebrateBtn = document.getElementById('celebrateAgainBtn');
-                const fullText = `It’s been almost four years amader kotha bola suru howar por — and somewhere after all the random chats, kotha bola, batch e chokh lukiye takano, you became my comfort. <br>
-When we first met, amra keu e vabini j amra jeta nijder life er chaos theke dure theke ektu valo feel korar jonne choose korchi seta kokhono eto ta pure and comforting hoye uthbe. You became that one person jar sathe ami completely nijer moto thakte pari — no mask, no explanation, no noise. sudhu amra and amader moment ta. <br>
-Ha amader memories bananor moto grand kichu hoyto hoyni but still, those moments we shared — Science center e ba ksp park, movie theater (jekhane amra movie dekhtei vule gachilam), bike e kore tomar amar komor dhore jawa, that first kiss — seguloi extraordinary because you were there. Somehow, tumi ei simple jinis gulo vison rokom special baniye felecho. You showed me kono reason chara just tomar dike takiye haste ba kichu feel korte kono explanation lage na, kivabe just tomar presence jekono heavy mood ke aste aste light kore dite pare. <br>
-Tumi na jantei onek ta heal korecho amay — jeta hoyto amio bujhini j I needed, kintu pawar por ekhon setar value ta bujhte pari. Kono big gestures noy, but through your care and love, tomar patience, and tomar way of understanding, even jokhon kichu clearly bole uthte parini tokhono bujhe newar j bapar ta, Uffff. Today, on your birthday, I just want to say this — you mean a lot to me, more than jeta vebe amra suru korechilam. You’re not just a part of my story… tomar jonne ei chapter er onek gulo golpo kharap howar poreo abar kichu ta nijer moto kore sundor hoye utheche trust me. <br>
-And at the end abaro bolte chai j, Happy Birthday, Madam ji — tumi samne thakle ekta chumu diye kotha gulo boltam but ekhon evabei bolte hocche... Love you a lot 💖`;
-                
-                letterText.textContent = '';
-                letterText.classList.add('typing-animation');
-                
-                let i = 0;
-                const typing = setInterval(() => {
-                    if (i < fullText.length) {
-                        letterText.textContent += fullText.charAt(i);
-                        i++;
-                        // Auto-scroll for mobile
-                        letterText.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    } else {
-                        clearInterval(typing);
-                        letterText.classList.remove('typing-animation');
-                        celebrateBtn.classList.remove('hidden');
-                    }
-                }, 40);
-            }
-        });
-    </script>
-</body>
-</html>
+                const decorations = document.getElementById('decorations
