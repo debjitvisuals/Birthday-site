@@ -377,7 +377,7 @@
                 const decorations = document.getElementById('decorations');
                 const banner = document.createElement('div');
                 banner.className = 'decoration-item';
-                banner.innerHTML = '<img src="images/banner.png" width="200" alt="Birthday Banner">';
+                banner.innerHTML = '<img src="images/banner.png" width="300" alt="Birthday Banner">';
                 banner.style.top = '5%';
                 banner.style.left = '50%';
                 banner.style.transform = 'translateX(-50%)';
@@ -400,7 +400,7 @@
                 balloonPositions.forEach((pos, i) => {
                     const balloon = document.createElement('div');
                     balloon.className = 'balloon decoration-item';
-                    balloon.innerHTML = '<img src="images/Balloon-Border.png" width="60" alt="Balloon">';
+                    balloon.innerHTML = '<img src="images/Balloon-Border.png" width="150" alt="Balloon">';
                     balloon.style.left = pos.left;
                     balloon.style.top = pos.top;
                     balloon.style.animationDelay = (i * 0.3) + 's';
@@ -509,6 +509,7 @@
     </script>
 </body>
 </html>
+
 
 
 
