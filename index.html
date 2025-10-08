@@ -200,7 +200,7 @@
         This adds openingimage.png to Scene 1
        ============================================ */
         #scene1 {
-            background-color: #fff5f5;
+            background-color: #191919;
             position: relative;
         }
 
@@ -217,7 +217,7 @@
     background-size: cover;
     opacity: 0.15;
     z-index: 0;
-    filter: blur(5px);
+    filter: blur(2px);
 }
 
 #scene1 > * {
@@ -340,7 +340,7 @@
         <audio id="bgMusic" loop>
         <source src="images/song.mp3" type="audio/mpeg">
     </audio>
-        <h1 class="text-primary text-3xl md:text-4xl font-bold mb-8">Happy 22nd Birthday, My Love ❤️</h1>
+        <h1 class="text-primary text-3xl md:text-4xl font-bold mb-8">Happy Birthday, Madam ❤️</h1>
         <div class="max-w-2xl mx-auto text-left px-4">
             <p id="letterText" class="text-white text-base md:text-lg leading-relaxed" style="line-height: 1.8;"></p>
         </div>
@@ -417,7 +417,7 @@
                 const decorations = document.getElementById('decorations');
                 const banner = document.createElement('div');
                 banner.className = 'decoration-item';
-                banner.innerHTML = '<img src="images/banner.png" width="300" alt="Birthday Banner">';
+                banner.innerHTML = '<img src="images/banner.png" width="500" alt="Birthday Banner">';
                 banner.style.top = '5%';
                 banner.style.left = '50%';
                 banner.style.transform = 'translateX(-50%)';
@@ -440,7 +440,7 @@
                 balloonPositions.forEach((pos, i) => {
                     const balloon = document.createElement('div');
                     balloon.className = 'balloon decoration-item';
-                    balloon.innerHTML = '<img src="images/Balloon-Border.png" width="150" alt="Balloon">';
+                    balloon.innerHTML = '<img src="images/Balloon-Border.png" width="300" alt="Balloon">';
                     balloon.style.left = pos.left;
                     balloon.style.top = pos.top;
                     balloon.style.animationDelay = (i * 0.3) + 's';
@@ -451,7 +451,7 @@
                 for (let i = 0; i < 25; i++) {
                     const star = document.createElement('div');
                     star.className = 'confetti decoration-item';
-                    star.innerHTML = '<img src="images/star.png" width="20" alt="Star">';
+                    star.innerHTML = '<img src="images/star.png" width="50" alt="Star">';
                     star.style.left = (Math.random() * 100) + '%';
                     star.style.animationDelay = (Math.random() * 2) + 's';
                     star.style.animationDuration = (Math.random() * 3 + 3) + 's';
@@ -462,7 +462,7 @@
             
             function showBirthdayText() {
                 const content = document.getElementById('eventContent');
-                content.innerHTML = '<h2 class="text-primary text-3xl md:text-4xl font-bold mb-8 animate-pulse">HAPPY BIRTHDAY MADAM JI 🎉</h2>';
+                content.innerHTML = '<h2 class="text-primary text-3xl md:text-4xl font-bold mb-8 animate-pulse">Happy Birthday to you again 🎉</h2>';
             }
             
             function showCake() {
@@ -589,6 +589,7 @@
     </script>
 </body>
 </html>
+
 
 
 
